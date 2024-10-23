@@ -1,0 +1,4 @@
+# Redis connection parameters (replace with your Redis Cloud credentials)
+requests==2.32.3
+redis==5.0.8
+python-dotenv==1.0.1
