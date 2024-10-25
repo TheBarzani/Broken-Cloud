@@ -1,6 +1,7 @@
 
 # AUTHOR: @SmileBar
-# DESCRIPTION: Simple script to download Novel Prizes Data since year 1901 in JSON format.
+# DESCRIPTION: Simple script to download Novel Prizes Data since year 1901 
+#              in JSON format.
 
 import requests
 import json
@@ -14,7 +15,7 @@ def fetch_nobel_prize_data(url):
     try:
         # Send a GET request to fetch the data
         response = requests.get(url)
-        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx, 5xx)
+        response.raise_for_status()  # Raise an HTTPError for bad responses 
         return response.json()  # Return the JSON content of the response
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
