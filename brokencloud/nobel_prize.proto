@@ -40,7 +40,7 @@ message LaureateCountResponse {
 
 // Detailed Laureate information
 message LaureateDetail {
-    string year = 1;          // Year of the prize
+    int32 year = 1;          // Year of the prize
     string category = 2;      // Prize category
     string motivation = 3;    // Prize motivation
 }
