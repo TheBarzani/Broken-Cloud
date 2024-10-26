@@ -1,0 +1,53 @@
+// nobelprize.proto
+syntax = "proto3";
+
+package nobelprize;
+
+// Service for querying Nobel Prize data
+service NobelPrizeService {
+    // Query 1: Count laureates by category and year range
+    rpc CountLaureatesByCategoryAndYears (CategoryYearRequest) returns (LaureateCountResponse) {}
+    
+    // Query 2: Count laureates by motivation keyword
+    rpc CountLaureatesByMotivationKeyword (MotivationKeywordRequest) returns (LaureateCountResponse) {}
+    
+    // Query 3: Get laureate details by name
+    rpc GetLaureateDetailsByName (LaureateNameRequest) returns (LaureateDetailsResponse) {}
+}
+
+// Request message for category and year range query
+message CategoryYearRequest {
+    string category = 1;       // e.g., "Physics", "Chemistry"
+    int32 start_year = 2;     // Must be >= 2013
+    int32 end_year = 3;       // Must be <= 2023
+}
+
+// Request message for motivation keyword query
+message MotivationKeywordRequest {
+    string keyword = 1;        // Keyword to search in motivation text
+}
+
+// Request message for laureate name query
+message LaureateNameRequest {
+    string firstname = 1;      // Laureate's first name
+    string surname = 2;        // Laureate's surname
+}
+
+// Response message for count queries
+message LaureateCountResponse {
+    int32 count = 1;          // Total number of laureates
+    string message = 2;       // Optional status/error message
+}
+
+// Detailed Laureate information
+message LaureateDetail {
+    string year = 1;          // Year of the prize
+    string category = 2;      // Prize category
+    string motivation = 3;    // Prize motivation
+}
+
+// Response message for laureate details query
+message LaureateDetailsResponse {
+    repeated LaureateDetail details = 1;     // List of prizes won by the laureate
+    string message = 2;           // Optional status/error message
+}

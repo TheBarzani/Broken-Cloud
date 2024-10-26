@@ -1,0 +1,12 @@
+{
+    "request": {
+      "category": "string",
+      "start_year": "int32",
+      "end_year": "int32"
+    },
+    "response": {
+      "count": "int32",
+      "message": "string"
+    }
+}
+  

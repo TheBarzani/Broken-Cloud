@@ -2,6 +2,7 @@
 # DESCRIPTION: A client application to communicate with the NobleDB.
 # DEPENDENCY: Ensure that the sample Noble prize data is added to Redis DB.
 #             This can be done using the « noble_redisdb_setup.py » script.   
+# ASSIGNMENT TASKS: Tasks 1.3   
 
 # TODO: Refactor all the code
 

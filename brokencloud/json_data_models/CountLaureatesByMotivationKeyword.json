@@ -1,0 +1,10 @@
+{
+    "request": {
+      "keyword": "string"
+    },
+    "response": {
+      "count": "int32",
+      "message": "string"
+    }
+}
+  

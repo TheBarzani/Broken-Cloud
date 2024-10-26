@@ -1,0 +1,16 @@
+{
+    "request": {
+      "firstname": "string",
+      "surname": "string"
+    },
+    "response": {
+      "details": [
+        {
+          "year": "int32",
+          "category": "string",
+          "motivation": "string"
+        }
+      ],
+      "message": "string"
+    }
+}

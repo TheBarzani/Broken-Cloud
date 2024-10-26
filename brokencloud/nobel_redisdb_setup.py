@@ -3,7 +3,7 @@
 #              1901 in JSON format. Filters out the prizes from 2013 
 #              to 2023 and addds it to the Redis DB. Creates requested 
 #              indexes.
-#              
+# ASSIGNMENT TASKS: Tasks 1.1 and 1.2            
 
 import requests
 import redis
