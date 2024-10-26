@@ -1,5 +1,5 @@
 
-# AUTHOR: @SmileBar
+# AUTHOR: @TheBarzani
 # DESCRIPTION: Simple script to download Novel Prizes Data since year 1901 
 #              in JSON format.
 

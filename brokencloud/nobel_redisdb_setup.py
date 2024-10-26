@@ -1,4 +1,4 @@
-# AUTHOR: @SmileBar
+# AUTHOR: @TheBarzani
 # DESCRIPTION: Simple script to download Novel Prizes Data since year 
 #              1901 in JSON format. Filters out the prizes from 2013 
 #              to 2023 and addds it to the Redis DB. Creates requested 
@@ -10,11 +10,9 @@ import redis
 import os
 from redis.commands.json.path import Path
 from dotenv import load_dotenv
-import redis.commands.search.aggregation as aggregations
-import redis.commands.search.reducers as reducers
-from redis.commands.search.field import TextField, NumericField, TagField
+from redis.commands.search.field import TextField, NumericField
 from redis.commands.search.indexDefinition import IndexDefinition, IndexType
-from redis.commands.search.query import NumericFilter, Query
+
 
 # Loading variables from .env file
 load_dotenv()
