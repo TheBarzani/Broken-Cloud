@@ -1,17 +1,16 @@
-// nobelprize.proto
 syntax = "proto3";
 
 package nobelprize;
 
 // Service for querying Nobel Prize data
 service NobelPrizeService {
-    // Query 1: Count laureates by category and year range
+    // Service 1: Count laureates by category and year range
     rpc CountLaureatesByCategoryAndYears (CategoryYearRequest) returns (LaureateCountResponse) {}
     
-    // Query 2: Count laureates by motivation keyword
+    // Service 2: Count laureates by motivation keyword
     rpc CountLaureatesByMotivationKeyword (MotivationKeywordRequest) returns (LaureateCountResponse) {}
     
-    // Query 3: Get laureate details by name
+    // Service 3: Get laureate details by name
     rpc GetLaureateDetailsByName (LaureateNameRequest) returns (LaureateDetailsResponse) {}
 }
 
