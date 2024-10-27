@@ -125,7 +125,8 @@ def create_search_index(redis_client: redis.Redis) -> bool:
             definition=IndexDefinition(
                 prefix=["prizes:"],
                 index_type=IndexType.JSON
-            )
+            ),
+            stopwords = [] # default list if stopwords is disabled
         )
         return True
     except redis.RedisError as e:

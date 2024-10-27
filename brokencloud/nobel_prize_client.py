@@ -105,7 +105,9 @@ class NobelPrizeClient:
             return total_laureates
             
         except redis.ResponseError as e:
+            # TODO: Figure out why there is inconsistency for some common words 
             print(f"Search error: {e}")
+            raise e
             return 0
 
     def get_laureate_details_by_name(self, firstname: str, 

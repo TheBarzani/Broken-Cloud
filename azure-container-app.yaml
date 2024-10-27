@@ -1,0 +1,26 @@
+# azure-container-app.yaml
+apiVersion: containerapp.azure.com/v1alpha1
+kind: ContainerApp
+metadata:
+  name: nobel-grpc-service
+spec:
+  template:
+    containers:
+    - name: nobel-grpc-service
+      image: ${REGISTRY_NAME}.azurecr.io/nobel-grpc-service:latest
+      env:
+      - name: REDIS_HOST
+        secretRef:
+          key: redis-host
+      - name: REDIS_PORT
+        secretRef:
+          key: redis-port
+      - name: REDIS_PASSWORD
+        secretRef:
+          key: redis-password
+      ports:
+      - containerPort: 50051
+  ingress:
+    external: true
+    targetPort: 50051
+    transport: http2
