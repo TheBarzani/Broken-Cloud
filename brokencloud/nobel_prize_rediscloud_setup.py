@@ -111,7 +111,6 @@ def create_search_index(redis_client: redis.Redis) -> bool:
         except redis.ResponseError:
             pass  # Index doesn't exist
         
-        # TODO: Inlcude the key ‘laureates’ as vector type in the Index
         schema = (
             NumericField("$.year", as_name="year"),
             TextField("$.category", as_name="category"),

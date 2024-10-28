@@ -3,7 +3,6 @@
 #   
 # ASSIGNMENT TASKS: Task 2.3
 #    
-# TODO: Refactor and comment
 
 import os
 import grpc
