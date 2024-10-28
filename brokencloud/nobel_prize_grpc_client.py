@@ -72,7 +72,7 @@ def main():
     """Main entry point of the application."""
     try:
         # TODO: Deploy to cloud and change host
-        grpc_client = NobelPrizeGRPCClient(host = "localhost")
+        grpc_client = NobelPrizeGRPCClient(host = "3.16.56.165")
         cli = NobelPrizeCLI(grpc_client)
         cli.run()
     except Exception as e:
