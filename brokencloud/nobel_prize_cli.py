@@ -27,7 +27,7 @@ class NobelPrizeCLI:
         print("2. Count laureates by motivation keyword")
         print("3. Find laureate details by name")
         print("4. Exit")
-        print("\n=============================================")
+        print("\n==============================================")
 
     def get_valid_year(self, prompt: str) -> int:
         """Get a valid year input from user."""

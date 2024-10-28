@@ -1,73 +1,12 @@
 
-# # AUTHOR: @TheBarzani
-# # DESCRIPTION: Simple script that runs the client from a local computer for 100 
-# #              times to each of three queries and measure the end-toend delay. 
-
-# import time
-# import csv
-# from typing import List, Dict
-# from nobel_prize_grpc_client import NobelPrizeGRPCClient 
-
-# def measure_query_delay(client: NobelPrizeGRPCClient, query_function: str, *args) -> float:
-#     """Measures the execution time of a gRPC query."""
-#     start_time = time.time()
-    
-#     # Call the specified query function with arguments
-#     if query_function == "count_laureates_by_category_and_years":
-#         client.count_laureates_by_category_and_years(*args)
-#     elif query_function == "count_laureates_by_motivation_keyword":
-#         client.count_laureates_by_motivation_keyword(*args)
-#     elif query_function == "get_laureate_details_by_name":
-#         client.get_laureate_details_by_name(*args)
-    
-#     end_time = time.time()
-#     return end_time - start_time
-
-# def run_queries(client: NobelPrizeGRPCClient, num_runs: int = 100):
-#     """Runs all queries the specified number of times and records delays."""
-#     # Lists to store delays
-#     category_year_delays = []
-#     motivation_keyword_delays = []
-#     name_details_delays = []
-
-#     print("Measuring count_laureates_by_category_and_years query delay")
-#     for _ in range(num_runs):
-#         category_year_delay = measure_query_delay(client, "count_laureates_by_category_and_years", "Physics", 2013, 2023)
-#         category_year_delays.append(category_year_delay)
-
-#     time.sleep(10)
-#     print("Measuring count_laureates_by_motivation_keyword query delay")
-#     for _ in range(num_runs): 
-#         motivation_keyword_delay = measure_query_delay(client, "count_laureates_by_motivation_keyword", "Peace")
-#         motivation_keyword_delays.append(motivation_keyword_delay)
-    
-#     time.sleep(10)
-#     print("Measuring get_laureate_details_by_name query delay")
-#     for _ in range(num_runs):
-#         name_details_delay = measure_query_delay(client, "get_laureate_details_by_name", "Albert", "Einstein")
-#         name_details_delays.append(name_details_delay)
-
-#     # Save results to CSV files
-#     save_to_csv("category_year_delays.csv", category_year_delays)
-#     save_to_csv("motivation_keyword_delays.csv", motivation_keyword_delays)
-#     save_to_csv("name_details_delays.csv", name_details_delays)
-
-# def save_to_csv(filename: str, data: List[float]):
-#     """Saves a list of delays to a CSV file."""
-#     with open(filename, mode='w', newline='') as file:
-#         writer = csv.writer(file)
-#         writer.writerow(['Delay (seconds)'])  # Header
-#         for delay in data:
-#             writer.writerow([delay])
-
-# if __name__ == "__main__":
-#     grpc_client = NobelPrizeGRPCClient(host="3.16.56.165") 
-#     run_queries(grpc_client)
+# AUTHOR: @TheBarzani
+# DESCRIPTION: Simple script that runs the client from a local computer for 100 
+#              times to each of three queries and measure the end-toend delay. 
 
 import time
 import csv
 from typing import List
-from nobel_prize_grpc_client import NobelPrizeGRPCClient  # Ensure this matches your file structure
+from nobel_prize_grpc_client import NobelPrizeGRPCClient 
 
 def measure_query_delay(client: NobelPrizeGRPCClient, query_function: str, *args) -> float:
     """Measures the execution time of a gRPC query in milliseconds."""
@@ -116,5 +55,5 @@ def save_to_csv(filename: str, data: List[float]):
             writer.writerow([delay])
 
 if __name__ == "__main__":
-    grpc_client = NobelPrizeGRPCClient(host="3.16.56.165")  # Change to your server's host
+    grpc_client = NobelPrizeGRPCClient(host="3.16.56.165") 
     run_queries(grpc_client)
