@@ -1,2 +1,2 @@
-# Broken-Cloud
-Programming solutions for the Programming on the Cloud course assignments at Concordia University for the Fall 2024 session.
+# Nobel-Query
+Nobel-Query: Nobel Prize Query System Based on Redis Cloud, gRPC, and Amazon EC2
